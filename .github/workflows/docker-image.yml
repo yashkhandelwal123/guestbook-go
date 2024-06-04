@@ -11,6 +11,7 @@ on:
 
 jobs:
   build:
+    if: github.event.pull_request.merged == true || contains(github.event.head_commit.message, 'BUILD_CONTAINER_IMAGE')
     runs-on: ubuntu-latest
 
     steps:
